@@ -1,0 +1,38 @@
+<div ng-controller="playerCrtl as pl" class="player-container">
+    <h3>Player info</h3>
+    <hr>
+     <p ng-show="pl.showInfo">{{pl.selectModal()}}</p>
+
+      <table ng-show="!pl.showInfo" class="table">
+         <thead>
+             <tr>
+                 <th>Player Name</th>
+                 <th>Player Number</th>
+                 <th>Player Country</th>
+                 <th>Player Type</th>
+                 <th>Player Age</th>
+                 <th>Games Playes</th>
+                 <th>Player Goals</th>
+                 <th>Yellow Cards</th>
+                 <th>Red Cards</th>
+                 <th>Team</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr ng-repeat="player in pl.players">
+                 <td>{{player.player_name}}</td>
+                 <td>{{player.player_number}}</td>
+                 <td>{{player.player_country}}
+                     <img ng-src="{{pl.getFlag(player.player_country)}}" alt="">
+                 </td>
+                 <td>{{player.player_type}}</td>
+                 <td>{{player.player_age}}</td>
+                 <td>{{player.player_match_played}}</td>
+                 <td>{{player.player_goals}}</td>
+                 <td>{{player.player_yellow_cards}}</td>
+                 <td>{{player.player_red_cards}}</td>
+                 <td>{{player.team_name}}</td>
+             </tr>
+         </tbody>
+      </table>
+</div>

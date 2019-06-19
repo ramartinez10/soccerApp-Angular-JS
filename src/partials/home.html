@@ -1,0 +1,32 @@
+<div ng-controller="soccerCtrl as sc">
+
+    <table class="table">
+        <thead>
+            <tr>
+                    <th style="cursor:pointer" ng-click="onSelectOrder('league_name')">League Name</th>
+                    <th style="cursor:pointer" ng-click="onSelectOrder('league_name')">League ID</th>
+                    <th style="cursor:pointer" ng-click="onSelectOrder('country_key')">Country key</th>
+                    <th style="cursor:pointer" ng-click="onSelectOrder('country_name')">Country Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="cursor:pointer"  ng-repeat-start="item in sc.leagues.result | filter:sc.myValueFunction" ng-click="sc.onSelectScorer($index,item.league_key)" >
+                    <td>{{item.league_name}}</td>
+                    <td>{{item.league_key}}</td>
+                    <td>{{item.country_key | countryKeyFormat}}</td>
+                    <td>{{item.country_name}}
+                         <img ng-src="{{sc.setFlags(item.country_name)}}">
+                    </td>                
+            </tr>
+            <tr ng-show="$index === sc.currentScorer" ng-repeat-end>
+                <td colspan="4">
+                  {{sc.soccerInfo(sc.scorers.result[0])}}
+                 <a href="#!/player/{{sc.scorers.result[0].player_key}}"><button class="btn btn-success">Select</button></a>   
+                </td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+</div>

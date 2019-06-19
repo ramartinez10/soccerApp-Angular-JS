@@ -1,0 +1,57 @@
+<div ng-controller="createCtrl as cr">
+  
+    <div class="container-fluid">
+            <h2>Create player</h2>
+            <hr>
+    </div>
+
+    <form name="formulario"  ng-submit="cr.savePlayer()" class="form">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" ng-model="cr.formData.player_name" required placeholder="Name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                                <input type="text" ng-model="cr.formData.player_type" required placeholder="Position" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" ng-model="cr.formData.player_match_played" required placeholder="Games Played" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                                <input type="text" ng-model="cr.formData.player_goals" required placeholder="Player Goals" class="form-control">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="number" ng-model="cr.formData.player_age" required  placeholder="Age" class="form-control">
+                </div>
+                <div class="col-md-3">
+                        <input type="text" ng-model="cr.formData.player_country" required placeholder="Country" class="form-control">
+                </div>
+                <div class="col-md-3">
+                        <input type="text" ng-model="cr.formData.team_name" required placeholder="Team" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <input ng-model="cr.formData.player_yellow_cards" required type="number" placeholder="Yellow Cards" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                    <input required ng-model="cr.formData.player_red_cards" type="number" placeholder="Red Cards" class="form-control">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <button  class="btn btn-primary" type="submit">Create Player</button>
+        </div>
+    </form>
+
+</div>
