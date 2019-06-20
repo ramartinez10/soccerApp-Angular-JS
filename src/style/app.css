@@ -21,6 +21,12 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 30px;
+  width: auto;
+}
+.leyenda-titulos{
+  color:white;
+  font-size: 3rem;
 }
 
 footer {
