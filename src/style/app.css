@@ -18,6 +18,12 @@ main {
 
 .soccer-title{
   margin:  0 auto;
+  padding: 30px;
+  width: auto;
+}
+.leyenda-titulos{
+  color:white;
+  font-size: 3rem;
 }
 
 footer {
